@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomor Kosong Gratis - Privasi Terjaga</title>
+    <style>
+        /* Reset dan variabel CSS */
+        :root {
+            --primary: #3498db;
+            --secondary: #2ecc71;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --danger: #e74c3c;
+            --warning: #f39c12;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: linear-gradient(rgba(52, 152, 219, 0.9), rgba(44, 62, 80, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%232c3e50"/><path d="M0 0L100 100M100 0L0 100" stroke="%233498db" stroke-width="1"/></svg>');
+            background-size: cover;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+        
+        .cta-button:hover {
+            background-color: #27ae60;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: #7f8c8d;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 4rem 0;
+            background-color: #f8f9fa;
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 0 1rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .step h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        /* Numbers Section */
+        .numbers {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .number-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+        
+        .number-card:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .number-card:hover h3 {
+            color: white;
+        }
+        
+        .number-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 4rem 0;
+            background-color: #f8f9fa;
+        }
+        
+        .faq-item {
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .faq-question {
+            background-color: white;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background-color: var(--light);
+        }
+        
+        .faq-answer {
+            background-color: white;
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--dark);
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 0;
+                text-align: center;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 1rem;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .steps {
+                flex-direction: column;
+            }
+            
+            .step {
+                margin-bottom: 2rem;
+            }
+        }
+        
+        /* Developer Fallback */
+        .developer-fallback {
+            display: none;
+            background-color: var(--warning);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-phone-slash"></i>
+                    <span>NomorKosong.net</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#features">Fitur</a></li>
+                    <li><a href="#how-it-works">Cara Kerja</a></li>
+                    <li><a href="#numbers">Nomor</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Nomor Kosong Gratis untuk Privasi Anda</h1>
+            <p>Lindungi privasi Anda dengan nomor telepon sementara yang dapat digunakan untuk registrasi online, verifikasi, dan komunikasi tanpa mengungkapkan identitas asli Anda.</p>
+            <a href="#numbers" class="cta-button">Dapatkan Nomor Gratis</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mengapa Menggunakan Nomor Kosong?</h2>
+                <p>Nikmati berbagai manfaat untuk melindungi privasi dan keamanan data pribadi Anda</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Privasi Terjaga</h3>
+                    <p>Jaga nomor pribadi Anda tetap aman dan hindari spam dengan menggunakan nomor sementara untuk berbagai keperluan.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3>Anonimitas</h3>
+                    <p>Berinteraksi secara online tanpa mengungkapkan identitas asli Anda untuk keamanan maksimal.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Gratis 100%</h3>
+                    <p>Tidak ada biaya tersembunyi. Semua nomor yang kami sediakan benar-benar gratis tanpa syarat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cara Menggunakan Nomor Kosong</h2>
+                <p>Hanya dalam 3 langkah sederhana, Anda bisa mendapatkan nomor kosong untuk berbagai keperluan</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Pilih Nomor</h3>
+                    <p>Pilih nomor kosong dari berbagai negara yang tersedia sesuai kebutuhan Anda.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Gunakan untuk Verifikasi</h3>
+                    <p>Gunakan nomor tersebut untuk registrasi aplikasi, media sosial, atau layanan online lainnya.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Terima Kode OTP</h3>
+                    <p>Terima kode OTP melalui SMS dan gunakan untuk menyelesaikan proses verifikasi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Numbers Section -->
+    <section class="numbers" id="numbers">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pilih Nomor Kosong Anda</h2>
+                <p>Kami menyediakan berbagai nomor dari berbagai negara untuk memenuhi kebutuhan Anda</p>
+            </div>
+            <div class="numbers-grid">
+                <div class="number-card">
+                    <h3>+1 (XXX) XXX-XXXX</h3>
+                    <p>Amerika Serikat</p>
+                    <p>Tersedia: 25 nomor</p>
+                </div>
+                <div class="number-card">
+                    <h3>+44 (XXX) XXX-XXXX</h3>
+                    <p>Inggris</p>
+                    <p>Tersedia: 18 nomor</p>
+                </div>
+                <div class="number-card">
+                    <h3>+62 (XXX) XXX-XXXX</h3>
+                    <p>Indonesia</p>
+                    <p>Tersedia: 32 nomor</p>
+                </div>
+                <div class="number-card">
+                    <h3>+91 (XXX) XXX-XXXX</h3>
+                    <p>India</p>
+                    <p>Tersedia: 21 nomor</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pertanyaan Umum</h2>
+                <p>Temukan jawaban untuk pertanyaan yang sering diajukan tentang layanan nomor kosong</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Apa itu nomor kosong?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nomor kosong adalah nomor telepon sementara yang dapat digunakan untuk berbagai keperluan seperti verifikasi akun, registrasi layanan online, atau komunikasi tanpa harus menggunakan nomor pribadi Anda.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Apakah benar-benar gratis?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya, semua nomor yang kami sediakan benar-benar gratis tanpa biaya apapun. Kami tidak memungut biaya registrasi, penggunaan, atau biaya tersembunyi lainnya.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Berapa lama nomor dapat digunakan?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Setiap nomor memiliki masa aktif yang berbeda, biasanya antara 1-7 hari. Setelah masa aktif habis, nomor akan dinonaktifkan dan tidak dapat digunakan lagi.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Apakah aman menggunakan nomor kosong?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sangat aman. Dengan menggunakan nomor kosong, Anda melindungi nomor pribadi dari spam, penipuan, dan penyalahgunaan data. Kami tidak menyimpan riwayat panggilan atau SMS yang masuk.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>NomorKosong.net</h3>
+                    <p>Layanan nomor telepon sementara gratis untuk melindungi privasi dan keamanan data pribadi Anda.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Link Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#features">Fitur</a></li>
+                        <li><a href="#how-it-works">Cara Kerja</a></li>
+                        <li><a href="#numbers">Nomor</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@nomorkosong.net">info@nomorkosong.net</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 NomorKosong.net - All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Developer Fallback (akan muncul jika ada masalah dengan JavaScript) -->
+    <div class="developer-fallback" id="devFallback">
+        <p>Halaman ini memerlukan JavaScript untuk berfungsi dengan optimal. Mohon aktifkan JavaScript di browser Anda.</p>
+    </div>
+
+    <script>
+        // Toggle mobile menu
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // FAQ accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = answer.classList.contains('active');
+                
+                // Close all answers
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.classList.remove('active');
+                });
+                
+                // If the clicked question wasn't active, open it
+                if (!isActive) {
+                    answer.classList.add('active');
+                }
+            });
+        });
+        
+        // Developer fallback detection
+        window.addEventListener('load', function() {
+            // Check if JavaScript is working properly
+            const testElement = document.createElement('div');
+            testElement.style.display = 'none';
+            document.body.appendChild(testElement);
+            
+            // If JavaScript is disabled, show fallback message
+            if (testElement.style.display === 'none') {
+                // JavaScript is working, hide fallback
+                document.getElementById('devFallback').style.display = 'none';
+            } else {
+                // JavaScript might have issues, show fallback
+                document.getElementById('devFallback').style.display = 'block';
+            }
+            
+            // Remove test element
+            document.body.removeChild(testElement);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
